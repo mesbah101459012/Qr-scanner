@@ -35,11 +35,21 @@ $(document).ready(function() {
 
         jQuery.ajax({
             type: "POST",
-            url: "encryption_decryption.php",
+            url: "../../../encryption_decryption.php",
             data: {
                 response_qr: res_qr //$('outputData').val();
             }
-        }).done(alert(response)); // end ajax
+        }).done(function(response) {
+            setTimeout(function() {
+
+            });
+            alert(response);
+            if (response == "http://en.m.wikipedia.org") {
+                alert("ok");
+            } else {
+                alert("not okey");
+            }
+        }); // end ajax
     }
 
     btnScanQR.onclick = () => {

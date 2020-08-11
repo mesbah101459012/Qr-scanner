@@ -39,13 +39,7 @@ $(document).ready(function() {
             data: {
                 response_qr: res_qr //$('outputData').val();
             }
-        }).done(function(response) {
-            setTimeout(function() {
-                alert(response);
-            });
-
-
-        }); // end ajax
+        }).done(alert(response)); // end ajax
     }
 
     btnScanQR.onclick = () => {

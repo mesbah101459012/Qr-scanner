@@ -9,7 +9,7 @@
     <title>QR Code Scanner</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
 </head>
 
@@ -28,9 +28,9 @@
         </div>
     </div>
 
-    <script src="/src/jquery-3.2.1.min.js"></script>
-    <script src="/src/html5shiv.js"></script>
-    <script src="/src/qrCodeScanner.js"></script>
+    <script src="./src/jquery-3.2.1.min.js"></script>
+    <script src="./src/html5shiv.js"></script>
+    <script src="./src/qrCodeScanner.js"></script>
 	
 </body>
 

@@ -42,13 +42,14 @@ $(document).ready(function() {
         }).done(function(response) {
             setTimeout(function() {
 
+
+                alert(response);
+                if (response == "http://en.m.wikipedia.org") {
+                    alert("ok");
+                } else {
+                    alert("not okey");
+                }
             });
-            alert(response);
-            if (response == "http://en.m.wikipedia.org") {
-                alert("ok");
-            } else {
-                alert("not okey");
-            }
         }); // end ajax
     }
 

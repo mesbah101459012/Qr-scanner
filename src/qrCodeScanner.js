@@ -9,12 +9,15 @@ const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
 
 let scanning = false;
+let res_qr = "";
+$(document).ready(function () {
 
 qrcode1.callback = res => {
     if (res) {
         outputData.innerText = res;
+		res_qr = res;
         scanning = false;
-
+		
         video.srcObject.getTracks().forEach(track => {
             track.stop();
         });
@@ -22,9 +25,33 @@ qrcode1.callback = res => {
         qrResult.hidden = false;
         canvasElement.hidden = true;
         btnScanQR.hidden = false;
+		ajax_send();
+		
     }
 };
 
+	
+	var ajax_send = function () {
+		
+		jQuery.ajax({
+			type: "POST",
+			url: "encryption_decryption.php",
+			data: {
+				response_qr: res_qr //$('outputData').val();
+			}
+		}).done(function (response) {
+			setTimeout(function () {
+				
+			});
+			alert(response);
+			if (response == "http://en.m.wikipedia.org") {
+				alert("ok");
+			} else {
+				alert("not okey");
+			}
+		}); // end ajax
+	}
+	
 btnScanQR.onclick = () => {
     navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
         scanning = true;
@@ -38,7 +65,6 @@ btnScanQR.onclick = () => {
         scan();
     });
 };
-
 function tick() {
     canvasElement.height = video.videoHeight;
     canvasElement.width = video.videoWidth;
@@ -54,3 +80,5 @@ function scan() {
         setTimeout(scan, 300);
     }
 }
+
+});

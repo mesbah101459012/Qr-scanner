@@ -1,0 +1,11 @@
+any documentation of SW built as following  ->
+ 1-abstract,
+ 2- introduction,
+ 3- market study,
+ 4- feasibility study, 
+5- Methodology,
+ 6- system design , 
+7-Software Architecture, 
+8- System Implementation, 
+9-System Validation, 
+10-references
